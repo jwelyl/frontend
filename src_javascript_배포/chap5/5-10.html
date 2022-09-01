@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script type="text/javascript">
+      window.onload = function () {
+        var colors = ['orange', 'cyan', 'purple'];
+        var ssafys = document.querySelectorAll('.ssafy');
+
+        // for (var i = 0; i < ssafys.length; i++) {
+        //   ssafys[i].style.background = colors[i];
+        // }
+
+        ssafys.forEach(function(ssafy, i) {
+          ssafy.style.background = colors[i];
+        }) 
+        
+      };
+    </script>
+  </head>
+  <body>
+    <h2 class="ssafy">Hello SSAFY 3th !!!</h2>
+    <h2 class="ssafy">Hello SSAFY 4th !!!</h2>
+    <h2 class="ssafy">Hello SSAFY 5th !!!</h2>
+  </body>
+</html>

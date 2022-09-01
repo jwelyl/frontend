@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">1</button>
+    <button id="btn2">2</button>
+</body>
+<script>
+    document.querySelector("#btn1").addEventListener("click", function(e) {
+        //  this의 정체는 이벤트 소스
+        console.log(this);
+        console.log(e.target);
+    });
+    document.querySelector("#btn2").addEventListener("click", ()=>{
+        //  this의 정체는 window 객체? -> 꼭 그렇진 않다.
+        //  JS에서의 this는 복잡하다.
+        //  JS에서 this는 출력해보고 쓰기
+        //  this를 안쓰는것도 방법이긴 함.
+        console.log(this);
+    })
+</script>
+</html>
