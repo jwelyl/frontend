@@ -1,0 +1,389 @@
+/* reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #787878;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+/* 상단 header 영역의 속성 설정 */
+/* TODO: header 태그의 높이를 70px로 하고 그림자 효과(box-shadow)를 적용해보세요.*/
+header {
+	height: 70px;
+	/* 그림자 효과 */
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+}
+/* END: */
+
+/* TODO: header의 자식 nav에 대해서 최대 넓이를 1200px로 한정하고 가운데 정렬 시키세요. 높이는 70px로 고정하세요.*/
+header>nav {
+	max-width: 1200px;
+	margin: auto;
+	height: 70px;
+	/*	calc 사용 시 연산자 주변에 공백
+	width: calc(100% - 120px);
+	*/
+}
+/* END: */
+
+/* TODO: nav의 자식 a 들의 높이를 70px로 고정하고 세로로 가운데 정렬 하세요. 왼쪽 외부 여백을 20px로 처리하세요.*/
+nav>a {
+	height: 70px;
+	margin-left: 20px;
+	line-height: 70px;
+	float: left; /* header_nav_home과 나란히 배치되기 위해서 띄워줘야 한다. */
+}
+/* END: */
+
+/* TODO: header_nav_home 클래스의 font 크기를 38px로 설정하세요.*/
+.header_nav_home {
+	font-size: 38px;
+}
+/* END: */
+
+/* TODO: header_nav_menu 클래스들을 띄워서 우측에 배치되도록 처리하세요 */
+.header_nav_menu {
+	float: right;
+}
+/* END: */
+
+/* TODO: header_nav_menuitem 클래스 요소들을 가로로 배치되도록 display 속성을 변경하시오. 
+높이를 70px로 맞추고 세로로 가운데 정렬 처리하시오. 
+또한 외부의 우측 여백을 20px 씩 부여하시오.*/
+.header_nav_menuitem {
+	display: inline-block;
+	margin-right: 20px;
+	height: 70px;
+	line-height: 70px;
+}
+/* END: */
+
+/* TODO: header_nav_menuitem의 마지막 요소의 우측 외부 공백은 10px로 처리하시오.*/
+.header_nav_menuitem:last-child {
+	margin-right: 10px;
+}
+/* END: */
+
+/* 중앙 content 영역의 속성 설정 */
+/* TODO: content 클래스의 최대 가로를 1200px,  상하 외부 여백을 10px로 하고 가운데 정렬 처리하시오.*/
+.content {
+	margin: 10px auto;
+	max-width: 1200px;
+}
+/* END: */
+
+/* 중앙 왼쪽 영역의 속성 설정 */
+/* TODO: content_left 클래스를 왼쪽으로 띄우고 가로를 전체의 25%로 처리하시오. 또한 최소 높이는 500px로 한다.*/
+.content_left {
+	float: left;
+	width: 25%;
+	min-height: 500px;
+}
+/* END: */
+
+/* 프로필 영역의 속성 설정 */
+/* TODO: profile 클래스의 가로가 부모를 꽉 채우고 내부 여백은 상하로 10px, 좌우는 부모의 10%로 하고 내용을 가운데 정렬 한다.*/
+.profile {
+	width: 100%;
+	padding: 10px 10%;
+	text-align: center;
+}
+/* END: */
+
+/* TODO: profile 클래스의 자식 img의 폭을 70%로 한정한다.*/
+.profile>img {
+	width: 70%;
+	/* border-radius: 10px; */
+}
+/* END: */
+
+/* 중앙 왼쪽 매장 영역의 속성 설정 /*
+/* TODO: store_title 클래스의 내용을 가운데 정렬 시키고 내부 여백을 10px로 처리한다.*/
+.store_title {
+	text-align: center;
+	padding: 10px;
+}
+/* END: */
+
+/* TODO: store_display 클래스의 내부 여백을 10px. font를 18px, 줄 높이를 30px 배경색을 #bdbdbd, border 반지름을 5px로 처리한다.*/
+.store_display {
+	padding: 10px;
+	font-size: 18px;
+	line-height: 30px;
+	background: #bdbdbd;
+	border-radius: 5px;
+}
+/* END: */
+
+/* TODO: store_item 클래스의 하위 li들에 대해서 내부 여백을 10px, 10px, 10px, 20px로 하고 font를 18px, 배경색을 #dddddd로 하고 내용을 왼쪽 정렬 처리하시오. 또한 border의 반지름을 5px로 한다.*/
+.store_item li {
+	padding: 10px 10px 10px 20px;
+	font-size: 18px;
+	background: #dddddd;
+	margin-top: 5px;
+	border-radius: 5px;
+	text-align: left;
+}
+/* END: */
+
+/* TODO: store_area 클래스의 전경색을 #414141로 하고 font를 굵게 처리하시오.*/
+.store_area {
+	color: #414141;
+	font-weight: bold;
+}
+/* END: */
+
+/* 중앙 왼쪽 설문조사 영역의 속성 설정 
+
+/* TODO: vote 클래스의 외부 여백을 10px로 하고 2px의 border를 추가하시오. border의 모서리는 둥글게 처리한다. 왼쪽 내부 여백은 20px */
+.vote {
+	margin: 10px;
+	border: 2px solid rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	padding-left: 20px;
+}
+/* END: */
+
+/* TODO: vote_title 클래스의 폰트를 18px, 굵게 처리하고 내용을 가운데 정렬한다. 또한 색은 #70706e로 하고 내부 여백을 10px 지정한다. */
+.vote_title {
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px;
+	color: #70706e;
+}
+/* END: */
+
+/* TODO: vote_question 클래스의 폰트를 18px로 하고 굵게 처리한다.*/
+.vote_question {
+	font-weight: bold;
+	font-size: 18px;
+}
+/* END: */
+
+/* TODO: vote_answer 클래스와 자손 li 들의 위쪽 외부 공간을 10px로 한다.*/
+.vote_answer, .vote_answer li {
+	margin-top: 10px;
+}
+/* END: */
+
+/* TODO: vote_answer 클래스의 마지막 자손 li의 아래쪽 외부 공간을 10px로 한다.*/
+.vote_answer li:last-child {
+	margin-bottom: 10px;
+}
+/* END: */
+
+/* TODO: vote_answer 클래스의 자손 img 들의 폭을 35px로 하고 모서리를 둥글게 처리한다.*/
+.vote_answer>ul>li>img {
+	width: 35px;
+	border-radius: 3px;
+}
+/* END: */
+
+/* TODO: vote_button 클래스의 컨텐트를 우측 정렬하고 외부 공백을 10px, 오른쪽 내부 여백을 10px로 한다.*/
+.vote_button {
+	text-align: right;
+	padding-right: 10px;
+	margin: 10px;
+}
+/* END: */
+
+/* TODO: vote_date 의 폰트를 굵게 하고 상하 외부 여백을 20, 20, 좌우는 0으로 한다.*/
+.vote_date {
+	font-weight: bold;
+	margin: 20px 0 10px;
+}
+/* END: */
+
+/* TODO: button 클래스의 배경을 white, 글씨를 black으로 처리하고 내부 여백을 4px로 한다.*/
+.button {
+	background: white;
+	color: black;
+	padding: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+/* END: */
+
+/* TODO: btn_primary 클래스의 배경과 border 색을 rgb(128, 0, 128)로 하고 color를  #fff로 한다.*/
+.btn_primary {
+	border-color: rgba(128, 0, 128, 0.3);
+	background: rgb(128, 0, 128);
+	color: #fff;
+}
+/* END: */
+
+/* TODO: content_body 클래스를 우측으로 띄우고 75%를 차지하게 한다. 최소 높이는 500px로 고정한다.*/
+.content_body {
+	float: right;
+	width: 75%;
+	min-height: 500px;
+}
+/* END: */
+
+/* 중앙 content 이미지게시판 영역의 속성 설정 */
+
+/* TODO: menu 클래스의 내부 여백을 상하 10px, 좌우 20px로 한다.*/
+.menu {
+	padding: 10px 20px;
+}
+/* END: */
+
+/* TODO: menu 클래스의 자손 li를 왼쪽부터 가로로 배치하고 외부 여백을 10px로 하시오. 한 줄에 4개의 li를 배치하도록 처리하시오. 내용은 가운데 정렬 한다.*/
+.menu ul>li {
+	float: left;
+	margin: 10px;
+	width: calc(25% - 20px);
+	text-align: center;
+	/* background: #ffffff; */
+}
+/* END: */
+
+/* TODO: menu 클래스의 자손 ul  컨텐트가 화면을 넘어가면 숨기도록 한다.*/
+.menu ul {
+	overflow: hidden;
+}
+/* END: */
+
+/* TODO: menu_item 클래스의 높이를 290px로 한정하고 내부 여백을 4px로 한다. border를 1px 로 설정한다.*/
+.menu_item {
+	padding: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	height: 290px;
+}
+/* END: */
+
+/* TODO: menu_item_img 클래스의 높이를 80%로 제한한다.*/
+.menu_item_img {
+	height: 80%;
+}
+/* END: */
+
+/* TODO: menu_item_img의 자식 img들을 높이와 너비가 부모를 채우도록 한다.*/
+.menu_item_img>img {
+	width: 100%;
+	height: 100%;
+	/* 	border-radius: 5px; */
+}
+/* END: */
+
+/* TODO: menu_item_info 클래스의 위쪽 외부 여백을 10%로 한다. */
+.menu_item_info {
+	/* 	height: 20%; */
+	margin-top: 10%;
+}
+/* END: */
+
+/* 중앙 content text게시판 영역의 속성 설정 */
+
+/* TODO: article 클래스의 padding을 상하 10px, 좌우 20px로 한다.*/
+.article {
+	padding: 10px 20px;
+}
+/* END: */
+
+/* TODO: article_popular 클래스를 왼쪽으로 띄워준다.*/
+.article_popular {
+	float: left;
+}
+/* END: */
+
+/* TODO: article_new 클래스를 오른쪽으로 띄워준다.*/
+.article_new {
+	float: right;
+}
+/* END: */
+
+/* TODO: article 클래스의 자식 article들의 폭을 48%로 하고 아래 외부 공백을 20px로 한다.*/
+.article>article {
+	width: 48%;
+	margin-bottom: 20px;
+}
+/* END: */
+
+/* TODO: article의 하위에 있는 h3 태그들의 아래 외부 여백을 15px로 처리한다.*/
+.article_popular>h3, .article_new>h3 {
+	margin-bottom: 15px;
+}
+/* END: */
+
+/* TODO: table class의 폭이 부모를 채우도록 하고 외부 아래 공백을 20px로 한다.*/
+.table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+/* END: */
+
+/* TODO: table 클래스의 자식 thead의 자손 th들의 내부 공백을 상하 10px, 좌우 5px로 하시오.*/
+.table>thead>tr>th {
+	padding: 10px 5px;
+}
+/* END: */
+
+
+/* TODO:table 클래스의 자식 tbody의 자손 th, td들의 줄 높이를 1.42로 하고 수직 정렬을 top으로 한다. 내부 공백을 8px로 하시오.*/
+.table>tbody th, .table>tbody td {
+	padding: 8px;
+	line-height: 1.42;
+	vertical-align: top;
+}
+/* END: */
+
+/* TODO: table_striped 클래스의 tr 중 홀수번째 요소들의 배경을 #f9f9f9로 설정하시오.*/
+.table_striped>tbody>tr:nth-of-type(odd) {
+	background-color: #f9f9f9;
+}
+/* END: */
+
+/* TODO: table_bordered의 border를 1px의 실선이며 #dddddd으로 설정하시오. */
+ .table_bordered {
+	border: 1px solid #dddddd;
+} 
+/* END: */
+
+/* TODO: table_bordered 클래스의  tbody가 가진 th, td들에 대해 border를 1px의 실선이며 #dddddd으로 설정하시오. */
+.table_bordered>tbody>tr>th, .table_bordered>tbody>tr>td {
+	border: 1px solid #dddddd;
+}
+/* END: */
+
+/* TODO: 모든 table 태그의 괘선이 한줄로 보이도록 처리한다. */
+table {
+	 border-collapse: collapse; 
+	
+}
+/* END: */
+
+/* TODO: table_hover 클래스의 tbody에서 tr에 mouse가 올라갔을 때 배경을  #f5f5f5로 변경하시오.*/
+.table_hover>tbody>tr:hover {
+	background-color: #f5f5f5;
+}
+/* END: */
+
+/* 하단 footer 영역의 속성 설정 
+/* TODO: footer태그에서 기존의 float 속성을 모두 없애고 높이를 70px, 최대 너비를 1200px로 하시오. 내부 여백은 10px, 외부 여백은 상하 10px, 좌우 auto로 한다.*/
+footer {
+	clear: both;
+	height: 70px;
+	max-width: 1200px;
+	margin: 10px auto;
+	padding: 10px;
+}
+/* END: */
+
+/* TODO: footer의 li 태그를 가로 메뉴로 표현한다.이때 높이와 줄 높이를 50px로 하고  외부 우측 공백을 20px로 한다.*/
+footer>ul>li {
+	display: inline-block;
+	margin-right: 20px;
+	height: 50px;
+	line-height: 50px;
+}
+/* END: */
