@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="xml">xml</button>
+    <button id="json">json</button>
+    <table>
+        <thead>
+            <tr>
+                <th>랭킹</th>
+                <th>제목</th>
+                <th>개봉일</th>
+            </tr>
+        </thead>
+        <tbody id="content"></tbody>
+    </table>
+</body>
+<script>
+    document.querySelector("#xml").addEventListener("click", () => {
+        console.log("#click");
+        const url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key=f5eef3421c602c6cb7ea224104795888&targetDt=20120101";
+        let promise = fetch(url);
+        console.log("then 이전 : " + promise);
+        promise.then((response) => {
+            console.log("then 내부 : " + promise);
+            console.log(response);
+            //  응답을 통해서 실제 원하는 데이터에 접근하기
+            return response.text();
+        }).then(data => {
+            console.log(data);
+            //  response.text의 결과로 평문이 전달됨 - 사용하기 힘들다.
+            let xml = new DOMParser().parseFromString(data, "text/xml");
+            console.log(xml);
+            //  query selector로 원하는 데이터 가져오기
+            const boxoffice = xml.querySelectorAll("dailyBoxOffice");
+            console.log(boxoffice);
+
+            //  화면에 붙여주기
+            //  원래 있던 데이터 지워주기
+            document.querySelector("#content").innerHTML = "";
+            
+            boxoffice.forEach(item => {
+                console.log(item);
+                const tr = document.createElement("tr");
+                tr.innerHTML = `<td>${item.querySelector("rank").innerHTML}</td><td>${item.querySelector("movieNm").innerHTML}</td><td>${item.querySelector("openDt").innerHTML}</td>`;
+            
+                document.querySelector("#content").appendChild(tr);
+            })
+        });
+    });
+
+    document.querySelector("#json").addEventListener("click", () => {
+        console.log("#click");
+        const url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20120101";
+        let promise = fetch(url);
+        console.log("then 이전 : " + promise);
+        promise.then((response) => {
+            console.log("then 내부 : " + promise);
+            console.log(response);
+            //  응답을 통해서 실제 원하는 데이터에 접근하기
+            return response.json();
+        }).then(data => {
+            console.log("전달받은 데이터 - json", data);
+            
+            const boxoffice = data.boxOfficeResult.dailyBoxOfficeList;
+            console.log(boxoffice);
+
+            //  화면에 붙여주기
+            //  원래 있던 데이터 지워주기
+            document.querySelector("#content").innerHTML = "";
+            
+            boxoffice.forEach(item => {
+                console.log(item);
+                const tr = document.createElement("tr");
+                tr.innerHTML = `<td>${item.rank}</td><td>${item.movieNm}</td><td>${item.openDt}</td>`;
+            
+                document.querySelector("#content").appendChild(tr);
+            })
+        });
+    });
+</script>
+</html>
